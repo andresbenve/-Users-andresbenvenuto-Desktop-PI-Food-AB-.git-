@@ -1,0 +1,132 @@
+OBSERVACIONES
+
+
+OB0
+
+TODA LA DATA -> https://api.spoonacular.com/recipes/complexSearch?apiKey=ff629434f39c459f8420d1f55f469bf7&addRecipeInformation=true
+BUSQUEDA POR ID -> https://api.spoonacular.com/recipes/716426/information?apiKey=ff629434f39c459f8420d1f55f469bf7
+
+
+|||
+
+OB1
+Cuidado porque en el controller se trae esa forma de nombrar al ID
+
+const { v4: uuidv4 } = require("uuid");
+const axios = require("axios");
+
+const addCharacter = (req,res, next)=>{
+    const { name, status, gender, image, location, episode } = req.body;
+    let character= {
+        name,
+        status,
+        gender,
+        image,
+        location
+        
+    }
+
+||||||||
+
+OB2
+Con este código te puedes traer los nombres de las recetas y devolverlo por Json
+
+outer.use('/auth', authRouter);
+
+router.get('/', async (req, res) => {
+
+const data = async () => {
+
+    let arr = (await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=ff629434f39c459f8420d1f55f469bf7&addRecipeInformation=true')).data.results
+    
+    arr = arr.map(e => {
+        return {
+            title: e.title
+        }
+    })
+    return arr
+}
+
+
+try {
+     let apiFood = await data()
+     res.status(200).json(apiFood)
+ } catch (error) {
+     console.log(error);
+     
+ }
+    
+
+})
+
+||||
+
+OB3
+Con estos Maps me puedo traer todos los stepByStep y guardarlos adentro de una tabla, me va a servir para cuando use el importe que busca por id
+
+            let stepByStep = []
+            arr = arr.map(e => {
+              e.analyzedInstructions.map(x => {
+                   stepByStep.push('|')
+                  x.steps.map(y => {
+                    stepByStep.push(y.step)
+                 })
+            })
+            
+        })
+        return stepByStep
+        }
+
+OBS4
+Para seguir después con las Action 
+
+  return async function (dispatch) {
+            try {
+            let data = await axios.get('http://localhost:3001/recipe?name=' + payload.name)
+            return {}
+             } catch (error) {
+            console.log(error);   
+    }}
+
+|||
+
+OB5 Arreglar el problema de caché 304 
+listo, es un problema de que tenes que borrar los datos del navegador
+
+|||
+
+OB6
+Ojo tenes que hacer la logica en el reducer, en algun momento vas a tener que cambiar las todo lo que tenes en accion al reducer.
+
+
+|||
+
+OB7
+
+|||
+
+OB8
+
+|||
+
+OB9
+
+|||
+
+OB10
+
+|||
+
+OB11
+
+|||
+
+OB12
+
+|||
+
+OB13
+
+|||
+
+
