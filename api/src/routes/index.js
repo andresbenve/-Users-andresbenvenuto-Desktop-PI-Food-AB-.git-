@@ -7,10 +7,10 @@ const { Router } = require('express');
 const router = Router();
 
 const recipe = require('./Recipe')// Configurar los routers
-const diet = require('./Diet')// Configurar los routers
+const type = require('./Type')// Configurar los routers
 
 router.use('/recipe', recipe)
-router.use('/diet', diet)
+router.use('/type', type)
 
 
 module.exports = router;

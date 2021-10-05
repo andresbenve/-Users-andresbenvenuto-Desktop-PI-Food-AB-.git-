@@ -22,5 +22,15 @@ export const getRecipesName =  (name) => { // Si no empiezas con export no vas a
     console.log(error);   
 }}}
 
+// export const formCreateRecipe =  (name) => { // Si no empiezas con export no vas a ningún lado 
+//   return async function (dispatch) {
+//     try {
+//     let recipe = await axios.get('http://localhost:3001/recipe?name=' + name) // fix back request
+//     return dispatch({ type: GET_RECIPES, payload: recipe.data});
+// } catch (error) {
+//     console.log(error);   
+// }}}
+
+
 
 

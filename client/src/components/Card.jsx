@@ -13,7 +13,7 @@ Score: {spoonacularScore}
 <p></p>
 Health Score: {healthScore}
 <p></p>
-<img src={image} alt="" />
+<img src={image}/>
 <p></p>
 {dishTypes}
 <p></p>

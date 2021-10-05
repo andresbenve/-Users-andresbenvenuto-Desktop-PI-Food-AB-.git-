@@ -23,12 +23,7 @@ function reducer (state = initialState, { type, payload }) {
           ...state, 
           diets: payload,
         }
-
-
-
     
-//        
-
     default:
         return state
     }

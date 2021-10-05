@@ -6,11 +6,11 @@ export default function Form() {
 
 const [input, setInput] = useState({
     title: '',
-    resume: '',
+    summary: '',
     image: '',
-    score: '',
-    healthyfoodscore: '',
-    diet: [],  
+    spoonacularScore: '',
+    healthScore: '',
+    dieta: [],  
 })
 
 
@@ -36,12 +36,12 @@ e.preventDefault()
         onChange={(e) => handleChange(e)}
         />
         <p></p>
-        <label>resume</label>
+        <label>summary</label>
         <p></p>
         <textarea 
         type="text"
-        name='resume'
-        value={input.resume}
+        name='summary'
+        value={input.summary}
         onChange={(e) => handleChange(e)}
         />
         <p></p>
@@ -54,30 +54,30 @@ e.preventDefault()
         onChange={(e) => handleChange(e)}
         />
         <p></p>
-        <label>score</label>
+        <label>spoonacularScore</label>
         <p></p>
         <input 
         type="number"
-        name='score'
-        value={input.score}
+        name='spoonacularScore'
+        value={input.spoonacularScore}
         onChange={(e) => handleChange(e)}
         />
         <p></p>
-        <label>healthyfoodscore</label>
+        <label>healthScore</label>
         <p></p>
         <input 
         type="number"
-        name='healthyfoodscore'
-        value={input.healthyfoodscore}
+        name='healthScore'
+        value={input.healthScore}
         onChange={(e) => handleChange(e)}
         />
         <p></p>
-        <label>diet</label>
+        <label>dieta</label>
         <p></p>
         <select 
         type="select"
-        name='diet'
-        value={input.diet}
+        name='dieta'
+        value={input.dieta}
         onChange={(e) => handleChange(e)}
         >
         <option value="vegan">vegan</option>
