@@ -1,13 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './LandingPage.css'
 
 export default function LandingPage() {
 
     return (
-        <div>
-            <h1> soy la página de recibimiento</h1>
+        <div className='principal'>
+            
             <NavLink to='/recipe'>
-            <button>NEXT</button>
+            <button className='landingButton'>Continue</button>
             </NavLink>
         </div>
     )

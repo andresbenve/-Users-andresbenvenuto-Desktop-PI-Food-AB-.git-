@@ -11,7 +11,7 @@ export default function Detail({ruta}) {
      { 
      //allrecipes !== undefined ?
         allrecipes.map(e => {
-            if(e.id == ruta){ // o podes hacer if(e.id === Number(ruta))
+             if(e.id === Number(ruta)){ // o podes hacer if(e.id == ruta){ 
                 return (
                 <Card
                 key={e.id}
@@ -22,5 +22,5 @@ export default function Detail({ruta}) {
                  healthScore={e.healthScore}
                  image={e.image}
                  dishTypes={e.dishTypes}
-                 dieta={e.dieta}
+               dieta2={e.dieta2}
                  />)}})}</div>)}

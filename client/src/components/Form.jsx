@@ -1,33 +1,53 @@
 import React, {  useState} from 'react' 
-    import { useDispatch, useSelector} from 'react-redux'
-    import { getRecipes } from '../actions'
+    import { useDispatch, } from 'react-redux'
+    import { formCreateRecipe  } from '../actions'
 
 export default function Form() {
-
+const dispatch = useDispatch()
 const [input, setInput] = useState({
     title: '',
     summary: '',
     image: '',
     spoonacularScore: '',
     healthScore: '',
-    dieta: [],  
+    dieta: [],
+    stepbystep: ''  
 })
 
 
 const handleChange = (e) => {
 e.preventDefault()
+if(e.target.name === 'dieta'){
+    setInput({
+        ...input,
+        [e.target.name]: [input.dieta] + ' ' + [e.target.value]
+    })
+} else {
 setInput({
     ...input,
     [e.target.name]: e.target.value
-})}
+})}}
 const handleSubmit = (e) => {
 e.preventDefault()
-// A qué hora tenemos que pasar la acction con el post
+dispatch(formCreateRecipe(input))
+setInput({
+    title: '',
+    summary: '',
+    image: '',
+    spoonacularScore: '',
+    healthScore: '',
+    dieta: [],
+    stepbystep: ''  
+})
 }
+
+
+
     return (
         <div>
         <form onSubmit={(e) => handleSubmit(e)}>
-        <label>title</label>
+        <p></p>
+        <label>Title</label>
         <p></p>
         <input 
         type="text"
@@ -95,9 +115,20 @@ e.preventDefault()
         <option value="Whole30">Whole30</option>
         </select>
         <p></p>
-        <button type='submit'>Send</button>
+        {input.dieta}
+        <p></p>
+        <label>Step by step</label>
+        <p></p>
+        <input 
+        type="text"
+        name='stepbystep'
+        value={input.stepbystep}
+        onChange={(e) => handleChange(e)}
+        />
+        <p></p>
+
+        <input type="submit" value='Send'/>
             </form>
-            
         </div>
     )
 }
